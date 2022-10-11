@@ -1,0 +1,2 @@
+# wants files in lib/ to be present
+t/meta-names.t

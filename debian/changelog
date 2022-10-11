@@ -1,0 +1,420 @@
+libsoftware-license-perl (0.104001-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Submit.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+  * Update standards version to 4.4.1, no changes needed.
+
+  [ gregor herrmann ]
+  * debian/watch: use uscan version 4.
+
+  [ Debian Janitor ]
+  * Update standards version to 4.5.0, no changes needed.
+
+  [ Dominique Dumont ]
+  * New upstream version 0.104001
+  * control:
+    * declare compliance with policy 4.6.0
+    * bump debhelper-compat to 13
+    * drop obsolete Breaks line
+  * copyright: update upstream copyright years
+
+ -- Dominique Dumont <dod@debian.org>  Tue, 21 Sep 2021 19:15:07 +0200
+
+libsoftware-license-perl (0.103014-2) unstable; urgency=medium
+
+  * removes all Debian specific patches (Closes: 828218)
+    These functionalities are now provided by
+    libsoftware-licensemoreutils-perl
+  * control: declare compliance with policy 4.3.0
+  * control: set compat to 12
+
+ -- Dominique Dumont <dod@debian.org>  Mon, 08 Jul 2019 18:00:18 +0200
+
+libsoftware-license-perl (0.103014-1) unstable; urgency=medium
+
+  * New upstream version 0.103014
+    * Added SPDX license expression support
+  * refreshed all patches
+  * control: declare compliance with version 4.2.1
+
+ -- Dominique Dumont <dod@debian.org>  Mon, 10 Dec 2018 10:24:08 +0100
+
+libsoftware-license-perl (0.103013-2) unstable; urgency=medium
+
+  * refreshed all patches
+  * Deprecate all Debian specific features (See #828218)
+    The Debian specific features will be removed once Buster is out.
+  * control: add Breaks: libconfig-model-dpkg-perl <<2.112
+
+ -- Dominique Dumont <dod@debian.org>  Mon, 02 Jul 2018 13:26:10 +0200
+
+libsoftware-license-perl (0.103013-1) unstable; urgency=medium
+
+  [ Axel Beckert ]
+  * Refresh patches which have offsets.
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+  * Remove Brian Cassidy from Uploaders. Thanks for your work!
+  * Remove Jonathan Yu from Uploaders. Thanks for your work!
+  * Remove Ryan Niebur from Uploaders. Thanks for your work!
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
+
+  [ Peter Pentchev ]
+  * Use my Debian e-mail address.
+  * Declare compliance with Debian Policy 4.1.4 with no changes.
+  * Bump the debhelper compat level to 10 with no changes.
+  * New upstream release, update the upstream copyright years.
+  * Add the year 2018 to my debian/* copyright notice.
+
+ -- Peter Pentchev <roam@debian.org>  Mon, 14 May 2018 18:29:09 +0300
+
+libsoftware-license-perl (0.103012-1) unstable; urgency=medium
+
+  * Add debian/upstream/metadata
+  * Import upstream version 0.103012
+  * Update copyright years for debian/* packaging files
+  * Bump Debhelper compat level to 9
+  * Declare compliance with Debian policy 3.9.8
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Tue, 26 Apr 2016 20:26:18 +0200
+
+libsoftware-license-perl (0.103011-3) unstable; urgency=medium
+
+  * Removed BSD-3-clause summary. So cme update dpkg-copyright
+    will no longer use it (as recommended by lintian)
+  * control:
+    * updated standard-version to 3.9.7
+    - removed obsolete alternate dep
+
+ -- Dominique Dumont <dod@debian.org>  Fri, 01 Apr 2016 13:28:47 +0200
+
+libsoftware-license-perl (0.103011-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ Niko Tyni ]
+  * Fix autopkgtest checks by skipping t/meta-names.t
+
+ -- Niko Tyni <ntyni@debian.org>  Fri, 05 Feb 2016 11:45:26 +0200
+
+libsoftware-license-perl (0.103011-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.103011
+  * refreshed patches
+  * copyright:
+    * updated years
+    * added /me in debian/* entry
+  * control:
+    - removed libsub-install-perl dependency
+    + added Testsuite parameter (HEAD -> master)
+    * updated Std-Versions to 3.9.6
+  * refreshed patches
+
+ -- Dominique Dumont <dod@debian.org>  Tue, 26 Jan 2016 12:48:21 +0100
+
+libsoftware-license-perl (0.103010-4) unstable; urgency=medium
+
+  * removed extraneous single dot from lgpl-* summaries
+  * fix LGPL wording for lgpl-* summaries to fix lintian note
+  * added bsd-3-clause short name
+  * added bsd summary
+  * refreshed patch short-name-fallback
+
+ -- Dominique Dumont <dod@debian.org>  Wed, 22 Jul 2015 18:41:29 +0200
+
+libsoftware-license-perl (0.103010-3) unstable; urgency=medium
+
+  * short_name patch: also find license for short names with version,
+    e.g. Apache-2.0
+
+ -- Dominique Dumont <dod@debian.org>  Sat, 27 Sep 2014 18:07:36 +0200
+
+libsoftware-license-perl (0.103010-2) unstable; urgency=medium
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-Browser URL to cgit web frontend
+
+  [ Dominique Dumont ]
+  * Improved short_name method behavior: if the passed short name
+    is not know, this method will try to create a license object
+     with Software::License:: and the specified short name
+     (e.g. Software::License::MIT with short_name => 'MIT')
+  * added patch to associate Expat license with MIT license
+  * added a method (debian_text) to get license text for debian:
+    Either the summary or the full text
+
+ -- Dominique Dumont <dod@debian.org>  Tue, 23 Sep 2014 13:46:26 +0200
+
+libsoftware-license-perl (0.103010-1) unstable; urgency=medium
+
+  [ gregor herrmann ]
+  * Strip trailing slash from metacpan URLs.
+
+  [ Dominique Dumont ]
+  * Imported Upstream version 0.103010
+  * refreshed patches
+  * patch summary_method: mention in doc that summary method
+    is Debian only
+
+ -- Dominique Dumont <dod@debian.org>  Mon, 07 Apr 2014 17:08:47 +0200
+
+libsoftware-license-perl (0.103009-1) unstable; urgency=medium
+
+  * debian/control: remove Nicholas Bamber from Uploaders on request of
+    the MIA team.
+  * New upstream release.
+  * Refresh patches.
+  * Update copyright years.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 23 Feb 2014 18:03:19 +0100
+
+libsoftware-license-perl (0.103008-1) unstable; urgency=low
+
+  * Imported Upstream version 0.103008
+  * removed *short_name patches applied upstream
+  * refreshed add_or_later_clause patch
+  * control: Standards-Version: '3.9.4' -> '3.9.5'
+  * control: added BD-I on libtry-tiny-perl
+
+ -- Dominique Dumont <dod@debian.org>  Sun, 01 Dec 2013 18:44:43 +0100
+
+libsoftware-license-perl (0.103006-2) unstable; urgency=low
+
+  * *-summary-patch: put or-later-clause at the right place (Closes: #728154)
+
+ -- Dominique Dumont <dod@debian.org>  Fri, 01 Nov 2013 12:32:48 +0100
+
+libsoftware-license-perl (0.103006-1) unstable; urgency=low
+
+  * Imported Upstream version 0.103006
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
+  * Change search.cpan.org based URIs to metacpan.org based URIs
+  * Update copyright years for upstream files
+  * Update copyright years for debian/* packaging files
+  * Wrap and sort fields in debian/control file
+  * Refresh new_from_short_name and update DEP3 header
+  * Refresh add_or_later_clause patch (offset)
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Tue, 22 Oct 2013 21:10:35 +0200
+
+libsoftware-license-perl (0.103005-1) unstable; urgency=low
+
+  [ Salvatore Bonaccorso ]
+  * Imported Upstream version 0.103005
+  * Update debian/copyright information.
+    Update copyright years for upstream files and debian/* packaging files.
+  * Remove new_from_short_name from debian/patches/series
+  * Remove patch 'summary' from debian/patches/series
+  * Refresh patches in debian/patches (offsets)
+  * Bump Standards-Version to 3.9.4
+  * Bump Debhelper compat level to 8.
+    Adjust versioned Build-Depends on debhelper to (>= 8).
+
+  [ Dominique Dumont ]
+  * changed all patches as requested by upstream. Note that
+    changes requested by upstream breaks existing code but...
+  * added patch to become backward compatible with 0.103004-2,
+    albeit with a deprecation warning.
+
+ -- Dominique Dumont <dod@debian.org>  Wed, 12 Dec 2012 12:16:49 +0100
+
+libsoftware-license-perl (0.103004-2) unstable; urgency=low
+
+  [ gregor herrmann ]
+  * Swap order of alternative (build) dependencies after
+    the perl 5.14 transition.
+
+  [ Dominique Dumont ]
+  * Added new class for LGPL-2 LGPL-2+ licenses
+  * copyright: updated format url
+  * control: updated Standards-Version: 3.9.3 (no other changes)
+
+ -- Dominique Dumont <dod@debian.org>  Fri, 23 Mar 2012 15:55:08 +0100
+
+libsoftware-license-perl (0.103004-1) unstable; urgency=low
+
+  * Imported Upstream version 0.103004
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Thu, 03 Nov 2011 07:53:45 +0100
+
+libsoftware-license-perl (0.103003-1) unstable; urgency=low
+
+  * Imported Upstream version 0.103003
+  * Update copyright for debian/* packaging.
+    Update copyright years in debian/* packaging stanza.
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Tue, 01 Nov 2011 10:34:53 +0100
+
+libsoftware-license-perl (0.103002-4) unstable; urgency=low
+
+  * added patches for LGPL-2.1 and LGPL-3 debian summary.
+  * added patches for LGPL-2.1+ and LGPL-3+ classes.
+
+ -- Dominique Dumont <dod@debian.org>  Sun, 23 Oct 2011 14:08:30 +0200
+
+libsoftware-license-perl (0.103002-3) unstable; urgency=low
+
+  [ Ansgar Burchardt ]
+  * debian/control: Convert Vcs-* fields to Git.
+
+  [ Salvatore Bonaccorso ]
+  * debian/copyright: Replace DEP5 Format-Specification URL from
+    svn.debian.org to anonscm.debian.org URL.
+
+  [ Dominique Dumont ]
+  + added Debian specific methods to get summary
+  + added less specific classes for GPL-1+ and GPL-2+ licenses
+  * debian/control: refreshed with config-edit
+  * debian/copyright: refreshed with config-edit
+  * removed unused override
+
+ -- Dominique Dumont <dod@debian.org>  Fri, 07 Oct 2011 18:52:14 +0200
+
+libsoftware-license-perl (0.103002-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Thu, 02 Jun 2011 14:50:00 +0100
+
+libsoftware-license-perl (0.103001-1) unstable; urgency=low
+
+  * New upstream release
+  * Raised standards version to 3.9.2
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Fri, 29 Apr 2011 00:14:45 +0100
+
+libsoftware-license-perl (0.103000-1) unstable; urgency=low
+
+  [ Salvatore Bonaccorso ]
+  * Email change: Salvatore Bonaccorso -> carnil@debian.org
+
+  [ Ansgar Burchardt ]
+  * New upstream release.
+  * Bump build-dep on libtest-simple-perl to >= 0.96.
+  * debian/copyright: Refer to "Debian systems" instead of "Debian GNU/Linux
+    systems".
+  * Email change: Ansgar Burchardt -> ansgar@debian.org
+
+  [ Nicholas Bamber ]
+  * Added myself to Uploaders
+  * New upstream release
+  * Refreshed copyright
+
+ -- Nicholas Bamber <nicholas@periapt.co.uk>  Tue, 12 Apr 2011 00:01:56 +0100
+
+libsoftware-license-perl (0.102340-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Salvatore Bonaccorso <salvatore.bonaccorso@gmail.com>  Fri, 27 Aug 2010 09:50:03 +0200
+
+libsoftware-license-perl (0.102250-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/copyright: Explicitly point to GPL-1 text in common-licenses.
+  * Bump Standards-Version to 3.9.1.
+
+ -- Salvatore Bonaccorso <salvatore.bonaccorso@gmail.com>  Sat, 14 Aug 2010 15:04:31 +0200
+
+libsoftware-license-perl (0.101620-1) unstable; urgency=low
+
+  * New upstream release
+  * Add myself to Uploaders.
+  * debian/control: Reorder packages in (Build-)Depends(-Indep) fields.
+  * Refresh debian/copyright file. Update debian/* packaging stanza.
+
+ -- Salvatore Bonaccorso <salvatore.bonaccorso@gmail.com>  Sat, 12 Jun 2010 17:31:34 +0200
+
+libsoftware-license-perl (0.101410-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ansgar Burchardt <ansgar@43-1.org>  Sat, 22 May 2010 04:16:06 +0900
+
+libsoftware-license-perl (0.101370-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update debian/copyright.
+  * Add myself to Uploaders.
+
+ -- Ansgar Burchardt <ansgar@43-1.org>  Wed, 19 May 2010 00:54:45 +0900
+
+libsoftware-license-perl (0.016-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Sat, 01 May 2010 22:48:34 -0400
+
+libsoftware-license-perl (0.015-1) unstable; urgency=low
+
+  * New upstream release.
+  * Build depend on Test::More 0.88.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 28 Mar 2010 20:27:00 +0200
+
+libsoftware-license-perl (0.014-1) unstable; urgency=low
+
+  * New upstream release.
+  * Convert to source format 3.0 (quilt).
+  * Add /me to Uploaders.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 24 Mar 2010 18:07:00 +0100
+
+libsoftware-license-perl (0.013-1) unstable; urgency=low
+
+  [ Jonathan Yu ]
+  * New upstream release
+  * Standards-Version 3.8.4 (no changes)
+  * Use short debhelper rules format
+  * Rewrite control description
+  * Add myself to Uploaders and Copyright
+  * Update copyright to DEP5 format
+
+  [ Nathan Handler ]
+  * debian/watch: Update to ignore development releases.
+
+  [ Salvatore Bonaccorso ]
+  * debian/control: Changed: Replace versioned (build-)dependency on
+    perl (>= 5.6.0-{12,16}) with an unversioned dependency on perl (as
+    permitted by Debian Policy 3.8.3).
+
+  [ Ryan Niebur ]
+  * Update ryan52's email address
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Thu, 18 Mar 2010 21:41:17 -0400
+
+libsoftware-license-perl (0.012-1) unstable; urgency=low
+
+  * New upstream release
+  * Add myself to Uploaders
+
+ -- Ryan Niebur <ryanryan52@gmail.com>  Sat, 23 May 2009 21:57:39 -0700
+
+libsoftware-license-perl (0.011-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Peter Pentchev <roam@ringlet.net>  Wed, 20 May 2009 13:42:24 +0300
+
+libsoftware-license-perl (0.010-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control: added myself to Uploaders
+  * debian/copyright: update copyright for inc/
+
+ -- Brian Cassidy <brian.cassidy@gmail.com>  Mon, 27 Apr 2009 09:14:53 -0300
+
+libsoftware-license-perl (0.009-1) unstable; urgency=low
+
+  * Initial Release. (Closes: #525302)
+
+ -- Peter Pentchev <roam@ringlet.net>  Sat, 25 Apr 2009 21:38:21 +0300

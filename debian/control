@@ -1,0 +1,30 @@
+Source: libsoftware-license-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Peter Pentchev <roam@debian.org>,
+           gregor herrmann <gregoa@debian.org>,
+           Ansgar Burchardt <ansgar@debian.org>,
+           Salvatore Bonaccorso <carnil@debian.org>,
+           Dominique Dumont <dod@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: libdata-section-perl,
+                     libtext-template-perl,
+                     libtry-tiny-perl,
+                     perl
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libsoftware-license-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libsoftware-license-perl.git
+Homepage: https://metacpan.org/release/Software-License
+
+Package: libsoftware-license-perl
+Architecture: all
+Depends: libdata-section-perl,
+         libtext-template-perl,
+         ${misc:Depends},
+         ${perl:Depends}
+Description: module providing templated software licenses
+ Software::License is a Perl module used by various tools for module building,
+ installation, and distribution to provide a simple way of referencing popular
+ free and open-source software licenses.
